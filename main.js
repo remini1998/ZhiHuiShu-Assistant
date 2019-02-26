@@ -21,10 +21,10 @@
 				$('.line1bq').click()
 			}
 
-			if ($('.volumeBox').find('.passVolume').width() != 0) {
-				console.log('静音')
-				$('.volumeIcon').click()
-			}
+// 			if ($('.volumeBox').find('.passVolume').width() != 0) {
+// 				console.log('静音')
+// 				$('.volumeIcon').click()
+// 			}
 			
 			if ($('.playButton').length > 0) {
 				console.log('点击播放')
