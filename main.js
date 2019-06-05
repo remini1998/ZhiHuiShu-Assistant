@@ -1,6 +1,7 @@
 
 (function () {
 	const MAX_DELAY = 60 // 切课时的最大延迟，单位：秒
+	const MAX_JUMP = 600 // 切课时的最大延迟，单位：秒
 
 	const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time))
 
@@ -11,15 +12,15 @@
 			console.log('正在检查')
 			const delay = Math.floor(Math.random() * MAX_DELAY * 1000) + 1000
 
-			if (!/1\.5/.test($('.speedBox').attr('style'))) {
-				console.log('提升到1.5倍速')
-				$('.speedTab15').click()
-			}
+// 			if (!/1\.5/.test($('.speedBox').attr('style'))) {
+// 				console.log('提升到1.5倍速')
+// 				$('.speedTab15').click()
+// 			}
 
-			if (!/liuchang/.test($('.definiBox').attr('style'))) {
-				console.log('更改画质')
-				$('.line1bq').click()
-			}
+// 			if (!/liuchang/.test($('.definiBox').attr('style'))) {
+// 				console.log('更改画质')
+// 				$('.line1bq').click()
+// 			}
 
 // 			if ($('.volumeBox').find('.passVolume').width() != 0) {
 // 				console.log('静音')
@@ -37,6 +38,17 @@
 				$('.popbtn_cancel').click()
 			}
 
+			await sleep(1000)
+		}
+	}
+	
+	const change = async function () {
+		console.log('智慧树助手已启动')
+
+		while (true) {
+			console.log('正在检查')
+			const delay = Math.floor(Math.random() * MAX_JUMP * 1000) + 1000
+
 			if ($('.current_play').find('.progressbar').width() == $('.current_play').find('.progressbar_box').width()) {
 				console.log('本节完成，' + delay / 1000 + ' 秒后将切到下一课')
 				await sleep(delay)
@@ -48,4 +60,5 @@
 	}
 
 	start()
+	change()
 }())
